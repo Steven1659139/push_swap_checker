@@ -14,7 +14,7 @@
 
 void	sa(t_stacks *container, int count)
 {
-	if (container->size_a > 0)
+	if (container->size_a > 1)
 	{
 		if (container->size_a == 2)
 			put_move(container, "ra", count);
@@ -36,7 +36,7 @@ void	sa(t_stacks *container, int count)
 
 void	sb(t_stacks *container, int count)
 {
-	if (container->size_b > 0)
+	if (container->size_b > 1)
 	{
 		if (container->size_b == 2)
 			rotate(container, 'b', count);

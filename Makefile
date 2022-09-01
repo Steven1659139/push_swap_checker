@@ -5,11 +5,13 @@ MAIN = checker.c
 SRC =  lstnew_int.c lstlast.c  parsing.c rotate.c lst_addback.c ft_lstadd.c ft_lstlen.c push.c swap.c reverse_rotate.c update.c init.c filter.c convert.c \
 		./get_next_line/get_next_line.c ./get_next_line/get_next_line_utils.c
 
-CC = gcc
+CC = @gcc
 CFLAGS = -Werror -Wall -Wextra -g
 
 OBJS = $(SRC:.c=.o)
 MAIN_OBJS = $(MAIN:.c=.o)
+
+GREEN = \033[1;32m
 
 
 all: $(NAME)
@@ -17,6 +19,7 @@ all: $(NAME)
 $(NAME): $(OBJS) $(MAIN_OBJS)
 	@$(MAKE) -rmC ./Libft
 	@$(CC) $(CFLAGS) $(MAIN) $(OBJS) ./Libft/libft.a -o $(NAME)
+	@echo "$(GREEN)Everything is top shape tiguidou"
 
 clean:
 	@$(MAKE) -C ./Libft fclean

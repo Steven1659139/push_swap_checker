@@ -38,7 +38,7 @@ void	convert(t_stacks *container, char *argv)
 		inter = ft_atoi(tab[i]);
 		if (!int_checker(inter))
 			yo_its_wrong("Les nombres doivent tenir dans un int.\n");
-		lstadd(&stack_a, lstnew_dbl(inter));
+		lstadd(&stack_a, lstnew_dbl(inter), container);
 		container->size_a += 1;
 		i++;
 	}
@@ -65,7 +65,7 @@ void	convert_sep(t_stacks *container, char **argv)
 			yo_its_wrong("Les nombres doivent tenir dans un int.\n");
 		if (ft_strchr(argv[i], ' '))
 			yo_its_wrong("Que des espaces");
-		lstadd(&stack_a, lstnew_dbl(inter));
+		lstadd(&stack_a, lstnew_dbl(inter), container);
 		i++;
 		container->size_a += 1;
 	}
@@ -74,5 +74,4 @@ void	convert_sep(t_stacks *container, char **argv)
 	container->a_head = stack_a;
 	container->size_max = container->size_a;
 	set_index(container);
-	//update_position(container);
 }

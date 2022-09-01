@@ -12,8 +12,6 @@
 
 #include "Push_swap.h"
 
-/* modifier nom et replacer dans la libft */
-
 t_dlist	*lstnew_dbl(int content)
 {
 	t_dlist	*new;

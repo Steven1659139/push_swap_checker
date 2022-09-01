@@ -39,7 +39,6 @@ void	update_stack_b(t_stacks *container, int move)
 		container->size_a -= 1;
 		container->size_b += 1;
 	}
-	container->nb_move += 1;
 	if (container->size_a == 0)
 		container->a_head = NULL;
 }
@@ -51,7 +50,6 @@ void	update_stack_a(t_stacks *container, int move)
 		container->size_b -= 1;
 		container->size_a += 1;
 	}
-	container->nb_move += 1;
 	if (container->size_b == 0)
 		container->b_head = NULL;
 }

@@ -16,6 +16,8 @@
 # include "Libft/libft.h"
 # include <stdio.h>
 
+
+
 typedef struct s_stacks
 {
 	t_dlist	*a_head;
@@ -25,6 +27,7 @@ typedef struct s_stacks
 	int		size_b;
 	int		size_max;
 	int		nb_move;
+	int		*add_static;
 }				t_stacks;
 
 // Parsing
@@ -41,7 +44,7 @@ void	table_flip(char **tab);
 t_dlist	*lstnew_dbl(int content);
 t_dlist	*lstlast(t_dlist **first, t_dlist *lst);
 void	lst_addback(t_dlist **alst, t_dlist *new);
-void	lstadd(t_dlist **first, t_dlist *new);
+void	lstadd(t_dlist **first, t_dlist *new, t_stacks *stack);
 size_t	ft_lstlen(t_dlist **first);
 // move
 

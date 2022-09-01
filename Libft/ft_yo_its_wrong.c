@@ -57,5 +57,7 @@ void	print_info()
 	printf("reverse rotate b (rrb): Décale vers le bas tous les éléments de la stack B et envoie le premier en haut de la stack.\n");
 	printf("rrr : rra et rrb en même temps.\n\n");
 
+	printf("shuffle: réinitialise la liste des nombres avec des nombres aléatoires compris entre 0 et 500.\n\n");
+
 	printf("ctrl + d: quitte le jeu et vous indique si vous avez réussi.\n\n");
 }

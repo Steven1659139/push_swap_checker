@@ -17,8 +17,8 @@ void	put_move(t_stacks *container, char *move, int count)
 {
 	if (ft_strncmp("info", move, 4) == 0)
 		print_info();
-	// else if (ft_strncmp("shuffle", move, 7) == 0)
-	// 	shuffle();
+	else if (ft_strncmp("shuffle", move, 7) == 0)
+		shuffle(container);
 	else if (*move != 's' && *move != 'r' && *move != 'p')
 		yo_its_wrong("Error\n");
 	else if (*move == 's' && ft_strlen(move) == 2)

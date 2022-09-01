@@ -20,21 +20,18 @@ void	rotate(t_stacks *container, char stack, int count)
 			container->a_head = container->a_head->next;
 		if (container->b_head)
 			container->b_head = container->b_head->next;
-		container->nb_move += 1;
 		if (count == 1)
 			container->nb_move += 1;
 	}
 	else if (stack == 'a' && container->a_head)
 	{
 		container->a_head = container->a_head->next;
-		container->nb_move += 1;
 		if (count == 1)
 			container->nb_move += 1;
 	}
 	else if (stack == 'b' && container->b_head)
 	{
 		container->b_head = container->b_head->next;
-		container->nb_move += 1;
 		if (count == 1)
 			container->nb_move += 1;
 	}

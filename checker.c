@@ -13,7 +13,6 @@
 #include "checker.h"
 #include "Push_swap.h"
 
-// int	*shuffle(min, max)
 
 void	ft_print_list(t_stacks *stack)
 {
@@ -48,6 +47,39 @@ void	ft_print_list(t_stacks *stack)
 	printf("Nombre de coup: %d\n", stack->nb_move);
 }
 
+void	shuffle(t_stacks *stack)
+{
+	time_t t;
+	int n;
+	int i;
+	char str[3];
+
+	i = 0;
+	printf("Entrer un nombre: ");
+	scanf("%3s", str);
+	n = ft_atoi(str);
+	ft_lstclear(&stack->a_head, free);
+	ft_lstclear(&stack->b_head, free);
+	stack->size_a = 0;
+	stack->size_b = 0;
+	*stack->add_static = 0;
+	stack->nb_move = 0;
+	srand((unsigned) time(&t));
+	while (i < n)
+	{
+		lstadd(&stack->a_head, lstnew_dbl(rand() % 500), stack);
+		stack->size_a += 1;
+		i++;
+		if (!twin_checker(&stack->a_head))
+		{
+			ft_lstclear(&stack->a_head, free);
+			*stack->add_static = 0;
+			stack->size_a = 0;
+			i = 0;
+		}
+	}
+	stack->size_max = stack->size_a;
+}
 
 char	*read_move(int fd)
 {
@@ -82,7 +114,7 @@ void	check_move(t_stacks *container, char **argv, int argc)
 				move = read_move(0);
 				if (!move)
 					break ;
-				put_move(container, move, 0);
+				put_move(container, move, 1);
 				free(move);
 				ft_print_list(container);
 			}
